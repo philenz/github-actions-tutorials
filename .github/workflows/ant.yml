@@ -26,5 +26,6 @@ jobs:
         java -version
         javac -version
         ant -version
+        mvn -version
     #- name: Build with Ant
     #  run: ant -noinput -buildfile build.xml
