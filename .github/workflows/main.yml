@@ -34,3 +34,11 @@ jobs:
         env:
           RANDOM_NUMBER: ${{ steps.foo.outputs.random-number }}
   
+      - name: Docker custom action
+        uses: ./.github/actions/docker
+        id: hellodocker
+        with:
+          who-to-greet: 'Freddy Mercury'
+
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hellodocker.outputs.time }}"
